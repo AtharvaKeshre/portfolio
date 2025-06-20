@@ -20,11 +20,11 @@ export function TechLogo({ name, logo}: TechLogoProps) {
       whileHover={{ y: -5 }}
     >
       <Card className="overflow-hidden">
-        <CardContent className="p-4 flex flex-col items-center justify-center">
-          <div className="relative w-16 h-16 mb-2">
+        <CardContent className="p-3 sm:p-4 flex flex-col items-center justify-center">
+          <div className="relative w-12 h-12 sm:w-16 sm:h-16 mb-2">
             <Image src={logo || "/placeholder.svg"} alt={`${name} logo`} fill className="object-contain" />
           </div>
-          <p className="text-sm font-medium text-center">{name}</p>
+          <p className="text-xs sm:text-sm font-medium text-center leading-tight">{name}</p>
         </CardContent>
       </Card>
     </motion.div>

@@ -49,22 +49,22 @@ export function ContactForm() {
 
   return (
     <Card>
-      <CardContent className="p-6">
+      <CardContent className="p-4 sm:p-6">
         {isSubmitted ? (
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             className="flex flex-col items-center justify-center h-full py-8 text-center"
           >
-            <h3 className="text-xl font-bold mb-2">Message Sent!</h3>
-            <p className="text-muted-foreground">
+            <h3 className="text-lg sm:text-xl font-bold mb-2">Message Sent!</h3>
+            <p className="text-muted-foreground text-sm sm:text-base">
               Thank you for reaching out. I&apos;ll get back to you as soon as possible.
             </p>
           </motion.div>
         ) : (
           <form onSubmit={handleSubmit} className="space-y-4">
             <div className="space-y-2">
-              <Label htmlFor="name">Name</Label>
+              <Label htmlFor="name" className="text-sm sm:text-base">Name</Label>
               <Input
                 id="name"
                 name="name"
@@ -72,10 +72,11 @@ export function ContactForm() {
                 value={formState.name}
                 onChange={handleChange}
                 required
+                className="text-sm sm:text-base"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="email">Email</Label>
+              <Label htmlFor="email" className="text-sm sm:text-base">Email</Label>
               <Input
                 id="email"
                 name="email"
@@ -84,10 +85,11 @@ export function ContactForm() {
                 value={formState.email}
                 onChange={handleChange}
                 required
+                className="text-sm sm:text-base"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="subject">Subject</Label>
+              <Label htmlFor="subject" className="text-sm sm:text-base">Subject</Label>
               <Input
                 id="subject"
                 name="subject"
@@ -95,10 +97,11 @@ export function ContactForm() {
                 value={formState.subject}
                 onChange={handleChange}
                 required
+                className="text-sm sm:text-base"
               />
             </div>
             <div className="space-y-2">
-              <Label htmlFor="message">Message</Label>
+              <Label htmlFor="message" className="text-sm sm:text-base">Message</Label>
               <Textarea
                 id="message"
                 name="message"
@@ -107,9 +110,10 @@ export function ContactForm() {
                 onChange={handleChange}
                 rows={4}
                 required
+                className="text-sm sm:text-base resize-none"
               />
             </div>
-            <Button type="submit" className="w-full" disabled={isSubmitting}>
+            <Button type="submit" className="w-full text-sm sm:text-base" disabled={isSubmitting}>
               {isSubmitting ? "Sending..." : "Send Message"}
             </Button>
           </form>

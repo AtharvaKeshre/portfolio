@@ -25,7 +25,7 @@ export function ProjectCard({ title, description, image, tags, link, delay = 0 }
       transition={{ duration: 0.5, delay }}
       viewport={{ once: true, margin: "-100px" }}
     >
-      <Card className="overflow-hidden group">
+      <Card className="overflow-hidden group h-full flex flex-col">
         <div className="relative aspect-video overflow-hidden">
           <Image
             src={image || "/placeholder.svg"}
@@ -34,18 +34,18 @@ export function ProjectCard({ title, description, image, tags, link, delay = 0 }
             className="object-cover transition-transform duration-500 group-hover:scale-105"
           />
         </div>
-        <CardContent className="p-6">
-          <h3 className="text-xl font-bold mb-2">{title}</h3>
-          <p className="text-muted-foreground mb-4">{description}</p>
-          <div className="flex flex-wrap gap-2">
+        <CardContent className="p-4 sm:p-6 flex-1 flex flex-col">
+          <h3 className="text-lg sm:text-xl font-bold mb-2">{title}</h3>
+          <p className="text-muted-foreground mb-4 text-sm sm:text-base flex-1">{description}</p>
+          <div className="flex flex-wrap gap-1 sm:gap-2 mb-4">
             {tags.map((tag) => (
-              <Badge key={tag} variant="secondary">
+              <Badge key={tag} variant="secondary" className="text-xs sm:text-sm">
                 {tag}
               </Badge>
             ))}
           </div>
         </CardContent>
-        <CardFooter className="p-6 pt-0">
+        <CardFooter className="p-4 sm:p-6 pt-0">
           <Button variant="outline" asChild className="w-full group">
             <Link
               href={link}
