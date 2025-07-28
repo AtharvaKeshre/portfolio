@@ -393,7 +393,18 @@ export default function Portfolio() {
                     : "Developed a SaaS application for YouTube creators, enabling real-time audience interaction with personalized ads to generate leads"}
                 image="/images/click.png"
                 tags={["Next.js", "TypeScript", "Rust", "Tailwind CSS"]}
-                link="https://github.com/AtharvaKeshre"
+                link="https://clickk-sync.vercel.app/dashboard"
+                delay={0.1}
+              />
+              <ProjectCard
+                title="Job-Juxta-AI"
+                description={
+                  "Built an AI powered resume optimization platform, helping users tailor resumes to specific job roles.Integrated Gemini AI (2.5 Flash) to analyze resumes and provide actionable insights, while leveraging Cursor for AI-assisted coding to streamline development and enhance code quality".length > 80
+                    ? "Built an AI powered resume optimization platform, helping users tailor resumes to specific job roles.Integrated Gemini AI (2.5 Flash) to analyze resumes and provide actionable insights, while leveraging Cursor for AI-assisted coding to streamline development and enhance code quality".slice(0, 80) + "..."
+                    : "Built an AI powered resume optimization platform, helping users tailor resumes to specific job roles.Integrated Gemini AI (2.5 Flash) to analyze resumes and provide actionable insights, while leveraging Cursor for AI-assisted coding to streamline development and enhance code quality"}
+                image="/images/jobjuxta.png"
+                tags={["Python", "FastAPI","Next.JS", "Gen AI"]}
+                link="https://job-juxta-ai.vercel.app/login"
                 delay={0.1}
               />
               <ProjectCard
